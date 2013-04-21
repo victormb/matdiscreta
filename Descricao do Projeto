@@ -1,0 +1,12 @@
+1ª Etapa: Adicionar elementos no conjunto N
+2ª Etapa: Adicionar elementos no conjunto A
+
+Trabalhando com conjuntos:
+
+Pertinencia: Verifica se o conjunto de elementos N pertente ao conjunto de elementos A
+Continência: Verifica se o conjunto de elementos A contém em N ou se N contém em A
+União: União de todos os elementos do conjunto N com os elementos do conjunto A
+Intersecção: São os elementos que pertencem ao conjunto N e ao conjunto A
+Diferença: Sâo os elementos que pertencem ao conjunto N e não pertencem ao conjunto A
+Produto Cartesiano: Conjunto de todos os pares ordenados formados, tornando-se um elemento N juntamente com um elemento 
+de A de todas as maneiras possíveis
