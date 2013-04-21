@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 /* 
 Descrição: Classe criada contendo as lógicas de cada operação de conjuntos matemáticos, nos quais são:
-Pertinência, Continência, União, Intersecção, Diferença e Produto Cartesiano
+Pertinência, Continência, União, Intersecção, Diferença e Produto Cartesiano.
 */
 
 namespace Conjunto
