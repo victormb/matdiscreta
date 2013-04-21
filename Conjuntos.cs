@@ -4,10 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-/* 
-Descrição: Classe criada contendo as lógicas de cada operação de conjuntos matemáticos, nos quais são:
-Pertinência, Continência, União, Intersecção, Diferença e Produto Cartesiano.
-*/
 
 namespace Conjunto
 {
@@ -126,34 +122,60 @@ namespace Conjunto
         public String Diferenca(Conjuntos<Tipo> A)
         {
             Conjuntos<Tipo> difere = new Conjuntos<Tipo>();
-            for (int i = 0; i < A.elementos.Count; i++)
+            Conjuntos<Tipo> teste = A;
+
+            int k = 0;
+            for (int i = 0; i < teste.elementos.Count; i++)
             {
-                for (int j = 0; j < elementos.Count; j++)
+                
+                for (int j=k; j < elementos.Count; j++)
                 {
-                    if (A.Pertinencia(elementos[j]))
+                    if (teste.Pertinencia(elementos[j]))
                     {
-                        A.elementos.RemoveAt(i);
+                        //A.elementos.RemoveAt(i);
                         elementos.RemoveAt(j);
                         j = elementos.Count;
+                        k++;
+
                     }
-                    else 
-                    {                       
-                        difere.Adicionar(elementos[i]);
+                    else
+                    {
+                        difere.Adicionar(teste.elementos[i]);
                     }
                 }
             }
 
-            String uni = "{ ";
+            String dif = "{ ";
             for (int i = 0; i < difere.elementos.Count; i++)
             {
-                if (uni == "")
-                    uni += difere.elementos[i];
+                if (dif == "")
+                    dif += difere.elementos[i];
                 else
-                    uni = uni + ", " + difere.elementos[i];
+                    dif = dif + ", " + difere.elementos[i];
             }
-            uni = uni + " }";
+            dif = dif + " }";
 
-            return uni;
+            return dif;
         }
+
+
+        public String Produto(Conjuntos<Tipo> A)
+        {
+            //Conjuntos<Tipo> prod = new Conjuntos<Tipo>();
+
+            String prods="";
+            for (int i = 0; i < A.elementos.Count; i++)
+            {
+                for (int j = 0; j < elementos.Count; j++)
+                {
+                    prods = prods+"<" + A.elementos[i] +","+elementos[j]+ ">, ";
+                }
+            }
+
+            return prods;
+        }
+        public void limparConjuntos() { elementos.Clear(); }
     }
+
+    
 }
