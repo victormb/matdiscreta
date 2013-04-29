@@ -119,7 +119,7 @@ namespace Conjunto
             return uni;
         }
 
-        public String Diferenca(Conjuntos<Tipo> A)
+        public String Diferenca(Conjuntos<Tipo> A) //não está funcionando!
         {
             Conjuntos<Tipo> difere = new Conjuntos<Tipo>();
             Conjuntos<Tipo> teste = A;
