@@ -1,4 +1,4 @@
-[b] Descrição da classe Conjuntos: [/b]
+Descrição da classe Conjuntos:
 
 A classe Conjuntos tem como objetivo operar tipos de conjuntos presentes
 na matemática discreta, essas diversas operações são: pertinência,
