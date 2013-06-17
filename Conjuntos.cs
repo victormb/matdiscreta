@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -119,7 +120,7 @@ namespace Conjunto
             return uni;
         }
 
-        public String Diferenca(Conjuntos<Tipo> A) //não está funcionando!
+        public String Diferenca(Conjuntos<Tipo> A)
         {
             Conjuntos<Tipo> difere = new Conjuntos<Tipo>();
             Conjuntos<Tipo> teste = A;
@@ -158,24 +159,35 @@ namespace Conjunto
             return dif;
         }
 
-
-        public String Produto(Conjuntos<Tipo> A)
+        public ArrayList Produto(Conjuntos<Tipo> A)
         {
             //Conjuntos<Tipo> prod = new Conjuntos<Tipo>();
-
+            ArrayList produto = new ArrayList();
             String prods="";
             for (int i = 0; i < A.elementos.Count; i++)
             {
                 for (int j = 0; j < elementos.Count; j++)
                 {
-                    prods = prods+"<" + A.elementos[i] +","+elementos[j]+ ">, ";
+                    produto.Add("<" + A.elementos[i] + "," + elementos[j] + ">, ");
+                     
                 }
+                  
             }
-
-            return prods;
+            return produto;
         }
+
         public void limparConjuntos() { elementos.Clear(); }
+
+        public int Quantidade(List<Tipo> elementos)
+        {
+            return elementos.Count();
+        }
+
+        
     }
+
+
+
 
     
 }
