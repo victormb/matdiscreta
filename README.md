@@ -7,6 +7,11 @@ operação está implementado nesta classe, tornando-se assim uma grande
 biblioteca de conjuntos matemáticos.
 
 
+
+
+
+
+
 Descrição da classe HeapSort:
 A classe HeapSort tem como objetivo operar uma entrada de números, e a partir
 dessa entrada, ordenar os números de forma crescente.
