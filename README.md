@@ -5,3 +5,15 @@ na matemática discreta, essas diversas operações são: pertinência,
 continência, união, intersecção, diferença e produto cartesiano. Cada tipo de
 operação está implementado nesta classe, tornando-se assim uma grande
 biblioteca de conjuntos matemáticos.
+
+
+Descrição da classe HeapSort:
+A classe HeapSort tem como objetivo operar uma entrada de números, e a partir
+dessa entrada, ordenar os números de forma crescente.
+
+Exemplo:
+Dada uma entrada de:
+2, 1, 3, 5, 4, 6
+
+A classe HeapSort acaba ordernando de forma crescente para:
+1, 2, 3, 4, 5, 6
