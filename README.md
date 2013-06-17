@@ -11,7 +11,6 @@ Descrição da classe Conjuntos1:
 A classe Conjuntos1 tem como objetivo gerar todos os subconjuntos de uma endorrelação.
 
 
-
 Descrição da classe HeapSort:
 A classe HeapSort tem como objetivo receber uma entrada de números, e a partir
 dessa entrada, ordenar os números de forma crescente.
