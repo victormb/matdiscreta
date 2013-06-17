@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,11 @@ namespace Conjunto
 
         public Conjuntos<string> N = new Conjuntos<string>();
         public Conjuntos<string> A = new Conjuntos<string>();
+        ArrayList listaTeste = new ArrayList();
+        ArrayList lista = new ArrayList();
+        Conjuntos1 aux = new Conjuntos1();
+        int i = 0;
+        String texto;
         
         public FormOperacoesConjuntos()
         {
@@ -22,7 +28,7 @@ namespace Conjunto
 
         private void FormOperacoesConjuntos_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void textBoxElemento_TextChanged(object sender, EventArgs e)
@@ -43,7 +49,17 @@ namespace Conjunto
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            N.Adicionar(textBoxAdd.Text);          
+            N.Adicionar(textBoxAdd.Text);
+            try
+            {
+                lista.Add(int.Parse(textBoxAdd.Text));
+                listaTeste.Add(textBoxAdd.Text);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("skdjf","sadfsd"+ex);
+            }
+            i++;
             textBoxAdd.Clear();
             textBoxAdd.Focus();
         }
@@ -101,17 +117,78 @@ namespace Conjunto
 
         private void buttonProd_Click(object sender, EventArgs e)
         {
-            String Prod;
+            ArrayList Prod;
             Prod =  A.Produto(N);
-            MessageBox.Show(Prod, "Produto");
+            //MessageBox.Show(Prod, "Produto");
         }
 
         private void buttonLimpar_Click(object sender, EventArgs e)
         {
             A.limparConjuntos();
             N.limparConjuntos();
+
             MessageBox.Show("Conjuntos foram limpados!", "Limpados");
         }
 
+        private void btnHeapSort_Click(object sender, EventArgs e)
+        {            
+            HeapSort.Heapsort(lista);
+           
+            foreach (System.Int32 item in lista)
+            {
+                texto = texto+"\n " + Convert.ToString(item.ToString());
+            }
+            MessageBox.Show(texto, "HeapSort - Que Lindo!");
+            texto = " ";
+        }
+
+        private void buttonEndorrelacao_Click(object sender, EventArgs e)
+        {
+            ArrayList Prod;
+            Prod = N.Produto(N);
+            texto += "{";
+            foreach (System.String x in Prod)
+            {
+                texto = texto + x.ToString();
+            }
+            texto += "}";
+            MessageBox.Show(texto, "Endorrelação de N");
+
+            ///////////////////////////////////////////////
+            ArrayList Resultado;
+            int i = 1;
+            Resultado = aux.Subconjuntos(Prod);
+            texto += "\n1- {";
+            foreach (System.String x in Resultado)
+            {
+                i++;
+                texto = texto + x.ToString();
+                texto += "}";
+                texto += Convert.ToString(i) + "- {";
+
+            }
+            texto += "}";
+            MessageBox.Show(texto, "Subconjuntos de N");
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ArrayList Resultado;
+            int i = 1;
+            Resultado = aux.Subconjuntos(listaTeste);
+            texto += "1- {";
+            foreach (System.String x in Resultado)
+            {
+                i++;
+                texto = texto + x.ToString();
+                texto += "}\n";
+                texto += Convert.ToString(i)  +"- {";
+                
+            }
+            texto += "}";
+            MessageBox.Show(texto, "Subconjuntos de N");
+        }
+       
     }
 }
